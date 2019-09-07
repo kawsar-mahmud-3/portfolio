@@ -1,0 +1,777 @@
+/*! HTML5 Boilerplate v7.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+    font-family: serif;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+
+
+
+
+
+
+
+/**************************************
+*****************
+**********
+custom css start*************/
+
+/****** slider start*******/
+#slider-h1 {
+    font-size: 4.50rem;
+    color: blue;
+    font-family: serif;
+    font-weight: 800;
+}
+#order-now {
+    color: white;
+    font-size: 5.20rem;
+    font-weight: 700;
+    text-decoration: none
+}
+#sliderh3 {
+    background-color: green;
+}
+#slider-h3 {
+    color: darkorange;
+    font-size: 2.95rem;
+    font-family: serif;
+    font-weight: 600;
+}
+/****** slider end*********/
+
+
+
+
+/********* Navbar start**********/
+
+#navbar-background {
+    color: white;
+    font-size: 1.0rem;
+    font-family: serif;
+    font-weight: 550;
+}
+#navbar-a-active {
+    color: yellow;
+    font-size: 1.35rem;
+}
+#navbar-a  {
+    color: white;
+    font-size: 1.35rem;
+}
+
+a.animated-button.thar-three {
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	border: px solid #F7CA18;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+0s;
+}
+a.animated-button.thar-three:hover {
+	color: white!important;
+	background-color: transparent;
+	text-shadow: nthree;
+    font-size: 1.40rem;
+}
+a.animated-button.thar-three:hover:before {
+	left: 0%;
+	right: auto;
+	width: 100%;
+}
+a.animated-button.thar-three:before {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: blue;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+0s;
+}
+/********* Navbar end***********/
+
+
+
+/********** Slider start************/
+
+
+/********* Slider  end************/
+
+
+/********Header start***********/
+body {
+    background-color: #F8F9FA;
+}
+#header {
+    padding-top: 6%;
+    padding-bottom: 3%;
+    background-image: url(img/blue-water.jpg);
+}
+
+#about-me {
+    text-align: center;
+    color: white;
+    font-family: serif;
+    font-size: 2.25rem;
+    margin-top: 1%;
+    margin-bottom: 0%;
+}
+#about-me a {
+    text-align: center;
+    color: white;
+    font-family: serif;
+    font-weight: 550;
+    font-size: 2.25rem;
+    margin-top: 1%;
+    margin-bottom: 0%;
+    border-style: inset;
+    padding: 1%;
+}
+#about-me a:hover {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: serif;
+    font-weight: 550;
+    font-size: 2.25rem;
+    margin-top: 1%;
+    margin-bottom: 0%;
+    border-style: double;
+    padding: 1%;
+    background-color: #0081b5;
+    box-shadow: 5px 5px 9px blue;
+}
+#header-box-1 {
+    margin-top: 3%;
+    box-shadow: 2px 2px 10px;
+    margin-bottom: 3%;
+}
+#header-box-1:hover {
+    margin-top: 3%;
+    box-shadow: 5px 5px 13px blue;
+    border-radius: 7px;
+    background-color: whitesmoke;
+    margin-bottom: 3%;
+}
+#header-box-2 {
+    margin-top: 3%;
+    box-shadow: 2px 2px 10px;
+    border-radius: 7px;
+    background-color: ;
+    margin-bottom: 3%;
+}
+#header-box-2:hover {
+    margin-top: 3%;
+    box-shadow: 9px 9px 17px blue;
+    border-radius: 7px;
+    background-color: ;
+    margin-bottom: 3%;
+    color:black;
+}
+#header-h1 {
+    font-size: 2.25rem;
+    font-family: serif;
+    text-shadow: 7px 6px 9px;
+    text-align: center;
+    color: white;
+}
+#header-h1:hover {
+    font-size: 2.25rem;
+    font-family: serif;
+    text-shadow: 7px 6px 9px solid blue;
+    text-align: center;
+    color: black;
+}
+#header-h2 {
+    font-family: serif;
+    font-size: 1.50rem;
+    font-weight: 650;
+    text-align: center;
+    padding-bottom: 2%;
+    color: white;
+}
+#header-p {
+    text-align: justify;
+    font-family:sans-serif;
+    font-family: cursive;
+    color: white;
+}
+#header-p:hover {
+    text-align: justify;
+    font-family:sans-serif;
+    font-family: cursive;
+    color: black;
+}
+#strong {
+    font-weight: 550;
+}
+#strong:hover {
+    font-weight: 550;
+    color: darkblue;
+}
+#fiverr-id {
+    background-color: rgba(0,0,0,0.5)!important;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    margin-top: 1%;
+    font-family: serif;
+    text-align: center;
+    font-weight: 550;
+    border-radius: 13px;
+}
+#fiverr-id:hover {
+    background-color: rgba(0,0,0,0.5)!important;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    margin-top: 1%;
+    font-family: serif;
+    text-align: center;
+    font-weight: 550;
+    border-radius: 13px;
+    box-shadow: 6px 6px 9px yellow;
+}
+#fiverr-id a {
+    font-family: serif;
+    text-decoration-style: wavy;
+    font-size: 1.30rem;
+    font-weight: 500;
+    color: yellow;
+}
+#fiverr-id a:hover {
+    font-family: serif;
+    text-decoration-style: double;
+    font-size: 1.30rem;
+    font-weight: 500;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: yellow;
+    color: blue;
+}
+
+
+/*********header end*********/
+
+
+
+/*********contact information********
+
+#contact {
+    background-image: url(img/background.jpg);
+}
+#contact-info {
+    text-align: center;
+    font-family: serif;
+}
+#fiverr {
+    text-align: center;
+    font-family: serif;
+    font-weight: 550;
+}
+*************************/
+
+
+/*********portfolio end*********/
+
+
+
+/**********certification start**********/
+
+#certification {
+    background-image: url(img/universe2.jpg);
+    background-color:;
+    opacity: 0.;
+    color: white;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+#certification-h1 {
+    text-align: center;
+    font-family: monospace;
+    font-weight: 550;
+    font-size: 2.75rem;
+    margin-bottom: 3%;
+    text-shadow: 4px 5px 3px blue;
+}
+#certification-h1:hover {
+    color: blue;
+    text-align: center;
+    font-family: monospace;
+    font-weight: 550;
+    font-size: 2.75rem;
+    margin-bottom: 3%;
+    text-shadow: 4px 5px 3px black;
+}
+#certification-p {
+    text-align: justify;
+}
+/**********certification end**********/
+
+
+
+/********my skill start*********/
+
+#my-skill {
+    background-image: url(img/universe2.jpg);
+    color: white;
+    padding-bottom: 3%;
+}
+#my-skill-h1 {
+    margin-top: 5%;
+    margin-bottom: 4%;
+    text-align: center;
+    color: yellow;
+    font-family: serif;
+    font-size: 2.25rem;
+    text-decoration: none;
+}
+
+
+#my-skill-h2 {
+    margin-top: 5%;
+    margin-bottom: 4%;
+    text-align: center;
+    color: yellow;
+    font-family: serif;
+    text-decoration: none;
+}
+#my-skill-h1 a {
+    text-align: center;
+    color: darkorange;
+    font-family: serif;
+    font-weight: 600;
+    text-decoration: none;
+}
+#my-skill-h2 {
+    text-align: center;
+    font-family: serif;
+    font-size: 1.70rem;
+    color: darkorange;
+    font-weight: 550;
+}
+#my-skill-p {
+    padding-top: 1%;
+    text-align: justify;
+}
+#my-skill-box {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 12px;
+    padding-bottom: 3%;
+    margin-right: 0%;
+    margin-bottom: 1%;
+    box-shadow: 7px 10px 14px blue;
+}
+#my-skill-box:hover {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 12px;
+    padding-bottom: 3%;
+    margin-right: 0%;
+    margin-bottom: 1%;
+    box-shadow: 5px 8px 10px darkorange;
+}
+#my-skill-iocn-h1 {
+    text-align: center;
+}
+#my-skill-icon {
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-size: 1.95rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 50%;
+}
+#my-skill-icon:hover {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 50%;
+    box-shadow: 3px 4px 7px darkorange;
+}
+/**********my skill end***********/
+
+
+
+
+
+/******portfolio start**********/
+
+#portfolio {
+    background-image: url(img/universe.jpg);
+    color: white;
+}
+#portfolio-h1 {
+    margin-top: 4%;
+    text-align: center;
+    color: white;
+}
+#portfolio-btn {
+    background: none;
+    color: white;
+    font-size: 2.25rem;
+    font-family: serif;
+    border-style: none;
+    box-shadow: 3px 4px 13px blue;
+}
+#portfolio-btn:hover {
+    background-color: black;
+    color: white;
+    font-size: 2.25rem;
+    font-family: serif;
+    border-color: yellow;
+    box-shadow: 2px 1px 8px;
+}
+#portfolio-p {
+    background-color: rgba(0,0,0,0.1);
+    font-weight: 450;
+    font-style: oblique;
+    text-align: center;;
+}
+#portfolio-box {
+    background-color: rgba(0,0,0,0.7);
+    padding: 1%;
+    box-shadow: 5px 6px 9px blue;
+}
+#portfolio-box:hover {
+    background-color: blue;
+    padding: 1%;
+    box-shadow: 7px 8px 14px red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
